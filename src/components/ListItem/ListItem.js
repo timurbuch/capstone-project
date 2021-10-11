@@ -1,15 +1,16 @@
 import styled from 'styled-components/macro'
 
 const ListItem = ({ name }) => {
-  return <StyledListItem role="listitem">{name}</StyledListItem>
+  return <StyledListItem>{name}</StyledListItem>
 }
 
-const StyledListItem = styled.p`
+const StyledListItem = styled.li`
   background-color: #82ef00;
-  margin: 0 1rem;
+  margin: 0;
   padding: auto;
   display: flex;
-  align-self: center;
+  justify-content: center;
+  align-items: center;
   height: 2rem;
   width: 100%;
 `
