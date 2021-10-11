@@ -11,7 +11,9 @@ const PlayerList = ({ data }) => {
   )
 }
 
-const StyledList = styled.div`
+const StyledList = styled.ul`
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 1rem;
