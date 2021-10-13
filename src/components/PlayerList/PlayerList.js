@@ -5,7 +5,16 @@ const PlayerList = ({ data }) => {
   return (
     <StyledList>
       {data.map(player => {
-        return <ListItem key={player.id} name={player.name} />
+        return (
+          <ListItem
+            key={player.id}
+            name={player.name}
+            img={player.img}
+            age={player.age}
+            wins={player.wins}
+            losses={player.losses}
+          />
+        )
       })}
     </StyledList>
   )
@@ -16,8 +25,10 @@ const StyledList = styled.ul`
   padding: 0;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   gap: 1rem;
-  background-color: lightgrey;
+  background-color: grey;
   height: 100vh;
 `
+
 export default PlayerList
