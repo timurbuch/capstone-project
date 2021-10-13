@@ -1,9 +1,9 @@
 import PlayerList from './components/PlayerList/PlayerList'
-import data from './data.json'
+import players from './players.json'
 
-const mockData = data.data
+const mockData = players.players
 function App() {
-  return <PlayerList data={mockData} />
+  return <PlayerList players={mockData} />
 }
 
 export default App
