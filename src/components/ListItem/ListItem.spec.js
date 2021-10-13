@@ -27,7 +27,7 @@ describe('ListItem', () => {
     const testname = screen.getByText('Andre Agassi')
     expect(testname).toBeInTheDocument()
   })
-  it('has shows details after being clicked', () => {
+  it('shows details after being clicked', () => {
     render(
       <ListItem
         name={testName}
