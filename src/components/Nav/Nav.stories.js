@@ -4,7 +4,6 @@ export default {
   title: 'Nav',
   component: Nav,
 }
-const Template = args => <Nav {...args} />
+const Template = () => <Nav />
 
 export const basicNav = Template.bind({})
-basicNav.args = {}

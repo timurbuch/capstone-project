@@ -44,7 +44,7 @@ const ListItem = ({ name, img, age, wins, losses, challenged }) => {
 const StyledListItem = styled.li`
   background-color: #4758d6;
   margin: 0;
-  padding: 1rem 1rem;
+  padding: 1rem;
   display: flex;
   color: white;
   flex-direction: column;
