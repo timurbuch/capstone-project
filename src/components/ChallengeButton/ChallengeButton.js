@@ -16,11 +16,10 @@ const ChallengeButton = ({ name, isChallenged, toggleChallenge }) => {
 }
 
 const StyledChallengeButton = styled.button`
-  font-weight: bold;
   border-radius: 1rem;
   padding: 3px;
   color: whitesmoke;
   background-color: ${({ isChallenged }) =>
-    isChallenged ? '#A5413E' : 'blue'};
+    isChallenged ? '#ea3a3a' : '#27E64B'};
 `
 export default ChallengeButton
