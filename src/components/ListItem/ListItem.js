@@ -61,6 +61,7 @@ const StyledListItem = styled.li`
 const ClickArea = styled.div`
   background-color: #82ef00;
   width: 100%;
+  height: 2rem;
   text-align: center;
 `
 
