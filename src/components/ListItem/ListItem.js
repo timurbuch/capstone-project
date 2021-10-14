@@ -3,9 +3,9 @@ import styled from 'styled-components/macro'
 
 import ChallengeButton from '../ChallengeButton/ChallengeButton'
 
-const ListItem = ({ name, img, age, wins, losses }) => {
+const ListItem = ({ name, img, age, wins, losses, challenged }) => {
   const [showDetails, setShowDetails] = useState(false)
-  const [isChallenged, setIsChallenged] = useState(false)
+  const [isChallenged, setIsChallenged] = useState(challenged)
 
   const setShowDetailsTrue = () => {
     setShowDetails(true)
@@ -18,7 +18,9 @@ const ListItem = ({ name, img, age, wins, losses }) => {
   }
   return (
     <StyledListItem>
-      <ClickArea onClick={setShowDetailsTrue}>{name}</ClickArea>
+      <ClickArea onClick={setShowDetailsTrue}>
+        <h4>{name}</h4>
+      </ClickArea>
       {showDetails && (
         <>
           <BackButton onClick={setShowDetailsFalse}>Return</BackButton>
@@ -40,10 +42,11 @@ const ListItem = ({ name, img, age, wins, losses }) => {
 }
 
 const StyledListItem = styled.li`
-  background-color: #82ef00;
+  background-color: #4758d6;
   margin: 0;
   padding: 1rem 1rem;
   display: flex;
+  color: white;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
@@ -59,7 +62,8 @@ const StyledListItem = styled.li`
   }
 `
 const ClickArea = styled.div`
-  background-color: #82ef00;
+  background-color: #4758d6;
+  color: white;
   width: 100%;
   height: 2rem;
   text-align: center;
