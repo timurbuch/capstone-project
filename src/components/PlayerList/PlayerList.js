@@ -13,6 +13,7 @@ const PlayerList = ({ players }) => {
             age={player.age}
             wins={player.wins}
             losses={player.losses}
+            challenged={player.challenged}
           />
         )
       })}
