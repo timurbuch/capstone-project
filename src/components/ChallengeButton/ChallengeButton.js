@@ -16,7 +16,7 @@ const ChallengeButton = ({ name, isChallenged, toggleChallenge }) => {
 }
 
 const StyledChallengeButton = styled.button`
-  font-size: large;
+  font-weight: bold;
   border-radius: 1rem;
   padding: 3px;
   color: whitesmoke;
