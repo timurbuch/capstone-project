@@ -27,7 +27,7 @@ describe('ListItem', () => {
     const testname = screen.getByText('Andre Agassi')
     expect(testname).toBeInTheDocument()
   })
-  it('has shows details after being clicked', () => {
+  it('shows details after being clicked', () => {
     render(
       <ListItem
         name={testName}
@@ -37,7 +37,7 @@ describe('ListItem', () => {
         img={testImg}
       />
     )
-    const listItem = screen.getByRole('listitem')
+    const listItem = screen.getByText('Andre Agassi')
     userEvent.click(listItem)
     const testimg = screen.getByAltText('Andre Agassi')
     expect(testimg).toBeInTheDocument()

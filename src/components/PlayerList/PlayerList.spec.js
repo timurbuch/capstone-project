@@ -10,12 +10,12 @@ const testData = [
 
 describe('PlayerList', () => {
   it('renders', () => {
-    render(<PlayerList data={testData} />)
+    render(<PlayerList players={testData} />)
     const playerList = screen.getByRole('list')
     expect(playerList).toBeInTheDocument()
   })
   it('renders as many listItems as testData contains', () => {
-    render(<PlayerList data={testData} />)
+    render(<PlayerList players={testData} />)
     const playerListItems = screen.getAllByRole('listitem')
     expect(playerListItems).toHaveLength(3)
   })

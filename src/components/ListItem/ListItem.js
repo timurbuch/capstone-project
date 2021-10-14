@@ -1,24 +1,38 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 
+import ChallengeButton from '../ChallengeButton/ChallengeButton'
+
 const ListItem = ({ name, img, age, wins, losses }) => {
   const [showDetails, setShowDetails] = useState(false)
+  const [isChallenged, setIsChallenged] = useState(false)
 
-  const toggleDetails = () => {
-    setShowDetails(!showDetails)
+  const setShowDetailsTrue = () => {
+    setShowDetails(true)
   }
-
+  const setShowDetailsFalse = () => {
+    setShowDetails(false)
+  }
+  const toggleChallenge = () => {
+    setIsChallenged(!isChallenged)
+  }
   return (
-    <StyledListItem onClick={toggleDetails}>
-      {name}
+    <StyledListItem>
+      <ClickArea onClick={setShowDetailsTrue}>{name}</ClickArea>
       {showDetails && (
         <>
+          <BackButton onClick={setShowDetailsFalse}>Return</BackButton>
           <img src={img} alt={name} />
           <ul>
             <li>Age: {age}</li>
             <li>Wins: {wins}</li>
             <li>Losses: {losses}</li>
           </ul>
+          <ChallengeButton
+            toggleChallenge={toggleChallenge}
+            name={name}
+            isChallenged={isChallenged}
+          />
         </>
       )}
     </StyledListItem>
@@ -27,23 +41,31 @@ const ListItem = ({ name, img, age, wins, losses }) => {
 
 const StyledListItem = styled.li`
   background-color: #82ef00;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   margin: 0;
-  padding: auto;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   justify-content: center;
   align-items: center;
-  min-height: 2rem;
   width: 100%;
   img {
     border-radius: 50%;
   }
   ul {
     list-style-type: none;
+    margin: 0;
+    padding: 0;
   }
 `
+const ClickArea = styled.div`
+  background-color: #82ef00;
+  width: 100%;
+  height: 2rem;
+  text-align: center;
+`
 
+const BackButton = styled.button`
+  background-color: lightyellow;
+`
 export default ListItem

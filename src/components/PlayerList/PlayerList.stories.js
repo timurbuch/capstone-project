@@ -8,7 +8,7 @@ const Template = args => <PlayerList {...args} />
 
 export const basicPlayerList = Template.bind({})
 basicPlayerList.args = {
-  data: [
+  players: [
     { id: 1, name: 'John McEnroe' },
     { id: 2, name: 'Bjorn Borg' },
     { id: 3, name: 'Boris Becker' },
