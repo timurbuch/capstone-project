@@ -1,4 +1,6 @@
 import PlayerList from './components/PlayerList/PlayerList'
+import Nav from './components/Nav/Nav'
+import ChallengeList from './components/ChallengeList/ChallengeList'
 import players from './players.json'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
@@ -8,10 +10,14 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <PlayerList players={mockData} />
         </Route>
+        <Route path="/challenge">
+          <ChallengeList players={mockData} />
+        </Route>
       </Switch>
+      <Nav />
     </Router>
   )
 }
