@@ -9,14 +9,14 @@ const Nav = () => {
       <Link to="/">
         <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
           <NavLink>
-            <MdLeaderboard />
+            <MdLeaderboard aria-label="PlayerList" />
           </NavLink>
         </IconContext.Provider>
       </Link>
       <Link to="/challenge">
         <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
           <NavLink>
-            <MdSportsTennis />
+            <MdSportsTennis aria-label="ChallengeList" />
           </NavLink>
         </IconContext.Provider>
       </Link>
