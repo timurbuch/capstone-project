@@ -7,17 +7,17 @@ const Nav = () => {
   return (
     <NavBar>
       <Link to="/">
-        <IconContext.Provider value={{ color: 'white', size: '8vh' }}>
-          <NavButton>
+        <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
+          <NavLink>
             <MdLeaderboard />
-          </NavButton>
+          </NavLink>
         </IconContext.Provider>
       </Link>
       <Link to="/challenge">
-        <IconContext.Provider value={{ color: 'white', size: '8vh' }}>
-          <NavButton>
+        <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
+          <NavLink>
             <MdSportsTennis />
-          </NavButton>
+          </NavLink>
         </IconContext.Provider>
       </Link>
     </NavBar>
@@ -27,25 +27,24 @@ const Nav = () => {
 const NavBar = styled.ul`
   margin: 0;
   padding: 0;
-  background-color: grey;
+  background-color: black;
   border-top: 1px solid white;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 15vh;
+  height: 12vh;
   list-style-type: none;
   position: sticky;
   bottom: 0;
 `
 
-const NavButton = styled.li`
-  border: 1px solid white;
+const NavLink = styled.li`
   color: white;
   background-color: black;
   text-align: center;
-  padding: 3.5vh 0;
-  height: 15vh;
-  width: 25vw;
+  padding: 2.5vh 0;
+  height: 12vh;
+  width: 17vw;
 `
 export default Nav
