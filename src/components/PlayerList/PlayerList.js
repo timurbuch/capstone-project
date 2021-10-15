@@ -13,6 +13,7 @@ const PlayerList = ({ players }) => {
             age={player.age}
             wins={player.wins}
             losses={player.losses}
+            challenged={player.challenged}
           />
         )
       })}
@@ -20,14 +21,14 @@ const PlayerList = ({ players }) => {
   )
 }
 
-const StyledList = styled.ul`
+export const StyledList = styled.ul`
   margin: 0;
-  padding: 0;
+  padding: 2rem 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  background-color: grey;
+  background-color: black;
   min-height: 100vh;
   overflow: auto;
 `

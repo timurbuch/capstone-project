@@ -1,13 +1,13 @@
-import PlayerList from './PlayerList'
+import ChallengeList from './ChallengeList'
 
 export default {
-  title: 'PlayerList',
-  component: PlayerList,
+  title: 'ChallengeList',
+  component: ChallengeList,
 }
-const Template = args => <PlayerList {...args} />
+const Template = args => <ChallengeList {...args} />
 
-export const basicPlayerList = Template.bind({})
-basicPlayerList.args = {
+export const basicChallengeList = Template.bind({})
+basicChallengeList.args = {
   players: [
     {
       id: 1,
