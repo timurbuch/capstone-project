@@ -1,8 +1,11 @@
 import styled from 'styled-components/macro'
 
 const ResultButton = ({ toggleResultView }) => {
+  const handleResultView = () => {
+    toggleResultView()
+  }
   return (
-    <StyledResultButton onClick={toggleResultView}>
+    <StyledResultButton onClick={handleResultView}>
       Submit match result
     </StyledResultButton>
   )
@@ -14,5 +17,5 @@ const StyledResultButton = styled.button`
   border-radius: 1rem;
   padding: 3px;
   color: whitesmoke;
-  background-color: lightgrey;
+  background-color: black;
 `
