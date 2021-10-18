@@ -2,12 +2,11 @@ import { useState } from 'react'
 import styled from 'styled-components/macro'
 
 import ChallengeButton from '../ChallengeButton/ChallengeButton'
-import ResultButton from '../ResultButton/ResultButton'
+import ResultForm from '../ResultForm/ResultForm'
 
 const ListItem = ({ name, img, age, wins, losses, challenged }) => {
   const [showDetails, setShowDetails] = useState(false)
   const [isChallenged, setIsChallenged] = useState(challenged)
-  const [resultView, setResultView] = useState(false)
 
   const setShowDetailsTrue = () => {
     setShowDetails(true)
@@ -18,9 +17,7 @@ const ListItem = ({ name, img, age, wins, losses, challenged }) => {
   const toggleChallenge = () => {
     setIsChallenged(!isChallenged)
   }
-  const toggleResultView = () => {
-    setResultView(!resultView)
-  }
+
   return (
     <StyledListItem>
       <ClickArea onClick={setShowDetailsTrue}>
@@ -35,7 +32,7 @@ const ListItem = ({ name, img, age, wins, losses, challenged }) => {
             <li>Wins: {wins}</li>
             <li>Losses: {losses}</li>
           </ul>
-          {isChallenged && <ResultButton toggleResultView={toggleResultView} />}
+          {isChallenged && <ResultForm />}
           <ChallengeButton
             toggleChallenge={toggleChallenge}
             name={name}
