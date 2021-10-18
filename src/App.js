@@ -3,9 +3,11 @@ import Nav from './components/Nav/Nav'
 import ChallengeList from './components/ChallengeList/ChallengeList'
 import ResultsList from './components/ResultsList/ResultsList'
 import players from './players.json'
+import results from './results.json'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 
+const mockResults = results.results
 const mockData = players.players
 function App() {
   return (
@@ -18,7 +20,7 @@ function App() {
           <ChallengeList players={mockData} />
         </Route>
         <Route path="/results">
-          <ResultsList />
+          <ResultsList results={mockResults} />
         </Route>
       </Switch>
       <Nav />
