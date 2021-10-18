@@ -7,6 +7,7 @@ describe('Profile', () => {
     const sectionTitle = screen.getByRole('heading', { name: 'Your Profile' })
     const userName = screen.getByRole('heading', { name: 'Test User' })
     const profileImg = screen.getByAltText('user profile pic')
+
     expect(sectionTitle).toBeInTheDocument
     expect(profileImg).toBeInTheDocument
     expect(userName).toBeInTheDocument
