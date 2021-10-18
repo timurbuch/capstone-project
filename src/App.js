@@ -2,6 +2,7 @@ import PlayerList from './components/PlayerList/PlayerList'
 import Nav from './components/Nav/Nav'
 import ChallengeList from './components/ChallengeList/ChallengeList'
 import ResultsList from './components/ResultsList/ResultsList'
+import Profile from './components/Profile/Profile'
 import players from './players.json'
 import results from './results.json'
 import { Route, Switch } from 'react-router'
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route path="/results">
           <ResultsList results={mockResults} />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
       </Switch>
       <Nav />
