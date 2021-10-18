@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import { IconContext } from 'react-icons'
-import { MdSportsTennis, MdLeaderboard } from 'react-icons/md'
+import { MdSportsTennis, MdLeaderboard, MdHistory } from 'react-icons/md'
 
 const Nav = () => {
   return (
@@ -17,6 +17,13 @@ const Nav = () => {
         <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
           <NavLink>
             <MdSportsTennis aria-label="ChallengeList" />
+          </NavLink>
+        </IconContext.Provider>
+      </Link>
+      <Link to="/results">
+        <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
+          <NavLink>
+            <MdHistory aria-label="ResultsList" />
           </NavLink>
         </IconContext.Provider>
       </Link>
