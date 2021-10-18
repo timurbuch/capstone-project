@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event'
 import ResultForm from './ResultForm'
 
 describe('ResultForm', () => {
-  it('renders when the button is clicked', () => {
+  it('renders input field when the button is clicked', () => {
     render(<ResultForm />)
     const resultButton = screen.getByRole('button')
     userEvent.click(resultButton)

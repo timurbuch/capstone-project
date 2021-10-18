@@ -4,7 +4,7 @@ import ResultButton from './ResultButton'
 
 describe('ResultButton', () => {
   const mockToggleResultView = jest.fn()
-  it('renders', () => {
+  it('renders a button', () => {
     render(<ResultButton />)
     const resultButton = screen.getByRole('button')
     expect(resultButton).toBeInTheDocument()
