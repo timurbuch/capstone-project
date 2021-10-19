@@ -1,37 +1,47 @@
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 import { IconContext } from 'react-icons'
-import { MdSportsTennis, MdLeaderboard, MdHistory } from 'react-icons/md'
+import {
+  MdSportsTennis,
+  MdLeaderboard,
+  MdHistory,
+  MdPerson,
+} from 'react-icons/md'
 
 const Nav = () => {
+  const navigationData = [
+    {
+      path: '/',
+      icon: <MdLeaderboard aria-label="PlayerList" />,
+    },
+    {
+      path: '/challenge',
+      icon: <MdSportsTennis aria-label="ChallengeList" />,
+    },
+    {
+      path: '/results',
+      icon: <MdHistory aria-label="ResultsList" />,
+    },
+    {
+      path: '/profile',
+      icon: <MdPerson aria-label="Userprofile" />,
+    },
+  ]
+
   return (
     <NavBar>
-      <Link to="/">
-        <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
-          <NavLink>
-            <MdLeaderboard aria-label="PlayerList" />
-          </NavLink>
-        </IconContext.Provider>
-      </Link>
-      <Link to="/challenge">
-        <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
-          <NavLink>
-            <MdSportsTennis aria-label="ChallengeList" />
-          </NavLink>
-        </IconContext.Provider>
-      </Link>
-      <Link to="/results">
-        <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
-          <NavLink>
-            <MdHistory aria-label="ResultsList" />
-          </NavLink>
-        </IconContext.Provider>
-      </Link>
+      {navigationData.map(({ path, icon }) => (
+        <Link to={path} key={path}>
+          <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
+            {icon}
+          </IconContext.Provider>
+        </Link>
+      ))}
     </NavBar>
   )
 }
 
-const NavBar = styled.ul`
+const NavBar = styled.nav`
   margin: 0;
   padding: 0;
   background-color: black;
@@ -41,17 +51,7 @@ const NavBar = styled.ul`
   justify-content: space-around;
   align-items: center;
   height: 12vh;
-  list-style-type: none;
   position: sticky;
   bottom: 0;
-`
-
-const NavLink = styled.li`
-  color: white;
-  background-color: black;
-  text-align: center;
-  padding: 2.5vh 0;
-  height: 12vh;
-  width: 17vw;
 `
 export default Nav
