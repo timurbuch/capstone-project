@@ -23,12 +23,13 @@ const ProfileWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  gap: 2re;
+  gap: 2rem;
   align-items: center;
 `
 
 const AvatarWrapper = styled.div`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   img {
