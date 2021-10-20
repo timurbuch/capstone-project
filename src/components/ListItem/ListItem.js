@@ -1,11 +1,19 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 import { MdArrowBack } from 'react-icons/md'
-import setChallengeStatus from '../../lib/setChallengeStatus'
 import ChallengeButton from '../ChallengeButton/ChallengeButton'
 import ResultForm from '../ResultForm/ResultForm'
 
-const ListItem = ({ name, img, age, wins, losses, challenged, players }) => {
+const ListItem = ({
+  name,
+  img,
+  age,
+  wins,
+  losses,
+  challenged,
+  players,
+  setPlayers,
+}) => {
   const [showDetails, setShowDetails] = useState(false)
   const [isChallenged, setIsChallenged] = useState(challenged)
 
@@ -15,6 +23,13 @@ const ListItem = ({ name, img, age, wins, losses, challenged, players }) => {
   const setShowDetailsFalse = event => {
     event.stopPropagation()
     setShowDetails(false)
+  }
+  const setChallengeStatus = (players, name) => {
+    const updatedPlayers = [...players]
+    const challengedPlayer = updatedPlayers.find(player => player.name === name)
+    const status = challengedPlayer.challenged
+    challengedPlayer.challenged = !status
+    setPlayers(updatedPlayers)
   }
   const toggleChallenge = () => {
     setIsChallenged(!isChallenged)
