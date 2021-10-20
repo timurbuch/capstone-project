@@ -1,7 +1,7 @@
 import ListItem from '../ListItem/ListItem.js'
 import styled from 'styled-components/macro'
 
-const PlayerList = ({ players }) => {
+const PlayerList = ({ players, setPlayers }) => {
   return (
     <StyledList>
       {players.map(player => {
@@ -14,6 +14,8 @@ const PlayerList = ({ players }) => {
             wins={player.wins}
             losses={player.losses}
             challenged={player.challenged}
+            players={players}
+            setPlayers={setPlayers}
           />
         )
       })}

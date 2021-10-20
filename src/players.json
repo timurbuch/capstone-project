@@ -1,5 +1,5 @@
 {
-  "players": [
+  "playerData": [
     {
       "id": 1,
       "name": "John McEnroe",
@@ -7,7 +7,7 @@
       "img": "https://picsum.photos/200",
       "wins": 22,
       "losses": 3,
-      "challenged": true
+      "challenged": false
     },
     {
       "id": 2,
@@ -34,7 +34,7 @@
       "img": "https://picsum.photos/200",
       "wins": 34,
       "losses": 8,
-      "challenged": true
+      "challenged": false
     },
     {
       "id": 5,
@@ -43,7 +43,7 @@
       "img": "https://picsum.photos/200",
       "wins": 88,
       "losses": 13,
-      "challenged": true
+      "challenged": false
     },
     {
       "id": 6,

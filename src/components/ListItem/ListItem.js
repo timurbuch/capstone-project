@@ -1,31 +1,54 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
-
+import { MdArrowBack } from 'react-icons/md'
 import ChallengeButton from '../ChallengeButton/ChallengeButton'
 import ResultForm from '../ResultForm/ResultForm'
 
-const ListItem = ({ name, img, age, wins, losses, challenged }) => {
+const ListItem = ({
+  name,
+  img,
+  age,
+  wins,
+  losses,
+  challenged,
+  players,
+  setPlayers,
+}) => {
   const [showDetails, setShowDetails] = useState(false)
   const [isChallenged, setIsChallenged] = useState(challenged)
 
   const setShowDetailsTrue = () => {
     setShowDetails(true)
   }
-  const setShowDetailsFalse = () => {
+  const setShowDetailsFalse = event => {
+    event.stopPropagation()
     setShowDetails(false)
+  }
+  const setChallengeStatus = (players, name) => {
+    const updatedPlayers = [...players]
+    const challengedPlayer = updatedPlayers.find(player => player.name === name)
+    const status = challengedPlayer.challenged
+    challengedPlayer.challenged = !status
+    setPlayers(updatedPlayers)
   }
   const toggleChallenge = () => {
     setIsChallenged(!isChallenged)
+    setChallengeStatus(players, name)
   }
 
   return (
-    <StyledListItem>
-      <ClickArea onClick={setShowDetailsTrue}>
-        <h4>{name}</h4>
-      </ClickArea>
+    <StyledListItem onClick={setShowDetailsTrue}>
+      <h4>{name}</h4>
+
       {showDetails && (
         <>
-          <BackButton onClick={setShowDetailsFalse}>Return</BackButton>
+          <BackIconWrapper>
+            <MdArrowBack
+              size={36}
+              onClick={event => setShowDetailsFalse(event)}
+            />
+          </BackIconWrapper>
+
           <img src={img} alt={name} />
           <ul>
             <li>Age: {age}</li>
@@ -55,6 +78,7 @@ const StyledListItem = styled.li`
   justify-content: center;
   align-items: center;
   width: 100%;
+  position: relative;
   img {
     border-radius: 50%;
   }
@@ -64,15 +88,10 @@ const StyledListItem = styled.li`
     padding: 0;
   }
 `
-const ClickArea = styled.div`
-  background-color: #4758d6;
-  color: white;
-  width: 100%;
-  height: 2rem;
-  text-align: center;
-`
 
-const BackButton = styled.button`
-  background-color: lightyellow;
+const BackIconWrapper = styled.div`
+  position: absolute;
+  top: 5vh;
+  left: 5vw;
 `
 export default ListItem

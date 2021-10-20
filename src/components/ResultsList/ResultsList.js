@@ -13,10 +13,15 @@ const ResultsList = ({ results }) => {
   return (
     <StyledList>
       <ButtonWrapper>
-        <ResultButton onClick={setIsFilteredFalse}>
+        <AllResultsButton onClick={setIsFilteredFalse} isFiltered={isFiltered}>
           Show all results
-        </ResultButton>
-        <ResultButton onClick={setIsFilteredTrue}>Show my results</ResultButton>
+        </AllResultsButton>
+        <FilteredResultsButton
+          onClick={setIsFilteredTrue}
+          isFiltered={isFiltered}
+        >
+          Show my results
+        </FilteredResultsButton>
       </ButtonWrapper>
       {isFiltered
         ? results
@@ -52,8 +57,14 @@ const ButtonWrapper = styled.div`
   justify-content: space-evenly;
 `
 
-const ResultButton = styled.button`
-  background-color: #ffe900;
+const AllResultsButton = styled.button`
+  background-color: ${({ isFiltered }) =>
+    !isFiltered ? 'lightgrey' : '#ffe900'};
+  color: #38272d;
+`
+const FilteredResultsButton = styled.button`
+  background-color: ${({ isFiltered }) =>
+    !isFiltered ? '#ffe900' : 'lightgrey'};
   color: #38272d;
 `
 
