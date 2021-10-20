@@ -1,5 +1,6 @@
 import { StyledList } from '../PlayerList/PlayerList'
 import ListItem from '../ListItem/ListItem'
+
 const ChallengeList = ({ players }) => {
   return (
     <StyledList>
@@ -15,6 +16,7 @@ const ChallengeList = ({ players }) => {
               wins={player.wins}
               losses={player.losses}
               challenged={player.challenged}
+              players={players}
             />
           )
         })}
