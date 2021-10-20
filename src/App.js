@@ -8,7 +8,6 @@ import resultData from './results.json'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import loadFromLocal from './lib/loadFromLocal'
 import saveToLocal from './lib/saveToLocal'
 
 const mockResults = resultData.resultData
