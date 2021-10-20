@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 import { MdArrowBack } from 'react-icons/md'
-
+import setChallengeStatus from '../../lib/setChallengeStatus'
 import ChallengeButton from '../ChallengeButton/ChallengeButton'
 import ResultForm from '../ResultForm/ResultForm'
 
-const ListItem = ({ name, img, age, wins, losses, challenged }) => {
+const ListItem = ({ name, img, age, wins, losses, challenged, players }) => {
   const [showDetails, setShowDetails] = useState(false)
   const [isChallenged, setIsChallenged] = useState(challenged)
 
@@ -18,6 +18,7 @@ const ListItem = ({ name, img, age, wins, losses, challenged }) => {
   }
   const toggleChallenge = () => {
     setIsChallenged(!isChallenged)
+    setChallengeStatus(players, name)
   }
 
   return (
