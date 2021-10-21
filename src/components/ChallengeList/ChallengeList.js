@@ -1,7 +1,7 @@
 import { StyledList } from '../PlayerList/PlayerList'
 import ListItem from '../ListItem/ListItem'
 
-const ChallengeList = ({ players, setPlayers }) => {
+const ChallengeList = ({ players, setPlayers, onResultSubmit }) => {
   return (
     <StyledList>
       {players
@@ -18,6 +18,7 @@ const ChallengeList = ({ players, setPlayers }) => {
               challenged={player.challenged}
               players={players}
               setPlayers={setPlayers}
+              onResultSubmit={onResultSubmit}
             />
           )
         })}

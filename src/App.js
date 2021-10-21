@@ -23,17 +23,48 @@ function App() {
   useEffect(() => {
     saveToLocal('storedPlayers', players)
   }, [players])
+  const [results, setResults] = useState(() => {
+    if (localStorage.getItem('storedResults') === null) {
+      return mockResults
+    } else {
+      return JSON.parse(localStorage.getItem('storedResults'))
+    }
+  })
+  useEffect(() => {
+    saveToLocal('storedResults', results)
+  }, [results])
+
+  const onResultSubmit = (opponent, submitResult) => {
+    setResults([
+      {
+        id: results.length,
+        player_1: 'User',
+        player_2: opponent,
+        result: submitResult,
+      },
+      ...results,
+    ])
+  }
+
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          <PlayerList players={players} setPlayers={setPlayers} />
+          <PlayerList
+            players={players}
+            setPlayers={setPlayers}
+            onResultSubmit={onResultSubmit}
+          />
         </Route>
         <Route path="/challenge">
-          <ChallengeList players={players} setPlayers={setPlayers} />
+          <ChallengeList
+            players={players}
+            setPlayers={setPlayers}
+            onResultSubmit={onResultSubmit}
+          />
         </Route>
         <Route path="/results">
-          <ResultsList results={mockResults} />
+          <ResultsList results={results} />
         </Route>
         <Route path="/profile">
           <Profile />
