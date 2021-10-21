@@ -1,7 +1,7 @@
 import ListItem from '../ListItem/ListItem.js'
 import styled from 'styled-components/macro'
 
-const PlayerList = ({ players, setPlayers }) => {
+const PlayerList = ({ players, setPlayers, onResultSubmit }) => {
   return (
     <StyledList>
       {players.map(player => {
@@ -16,6 +16,7 @@ const PlayerList = ({ players, setPlayers }) => {
             challenged={player.challenged}
             players={players}
             setPlayers={setPlayers}
+            onResultSubmit={onResultSubmit}
           />
         )
       })}

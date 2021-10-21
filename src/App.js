@@ -49,13 +49,21 @@ function App() {
     <Router>
       <Switch>
         <Route exact path="/">
-          <PlayerList players={players} setPlayers={setPlayers} />
+          <PlayerList
+            players={players}
+            setPlayers={setPlayers}
+            onResultSubmit={onResultSubmit}
+          />
         </Route>
         <Route path="/challenge">
-          <ChallengeList players={players} setPlayers={setPlayers} />
+          <ChallengeList
+            players={players}
+            setPlayers={setPlayers}
+            onResultSubmit={onResultSubmit}
+          />
         </Route>
         <Route path="/results">
-          <ResultsList results={mockResults} />
+          <ResultsList results={results} />
         </Route>
         <Route path="/profile">
           <Profile />

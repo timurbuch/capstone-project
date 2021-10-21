@@ -13,6 +13,7 @@ const ListItem = ({
   challenged,
   players,
   setPlayers,
+  onResultSubmit,
 }) => {
   const [showDetails, setShowDetails] = useState(false)
   const [isChallenged, setIsChallenged] = useState(challenged)
@@ -55,7 +56,9 @@ const ListItem = ({
             <li>Wins: {wins}</li>
             <li>Losses: {losses}</li>
           </ul>
-          {isChallenged && <ResultForm />}
+          {isChallenged && (
+            <ResultForm name={name} onResultSubmit={onResultSubmit} />
+          )}
           <ChallengeButton
             toggleChallenge={toggleChallenge}
             name={name}
