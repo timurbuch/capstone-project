@@ -36,13 +36,13 @@ function App() {
 
   const onResultSubmit = (opponent, submitResult) => {
     setResults([
-      ...results,
       {
         id: results.length,
         player_1: 'User',
         player_2: opponent,
         result: submitResult,
       },
+      ...results,
     ])
   }
 
