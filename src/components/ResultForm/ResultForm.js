@@ -19,7 +19,11 @@ const ResultForm = ({ name, onResultSubmit }) => {
       player1Set3,
       player2Set3,
     } = form.elements
-    let result = `${player1Set1.value}:${player2Set1.value} ${player1Set2.value}:${player2Set2.value}`
+    let result =
+      `${player1Set1.value}:${player2Set1.value} ${player1Set2.value}:${player2Set2.value}` +
+      player1Set3
+        ? `${player1Set3}:${player2Set3}`
+        : ''
     onResultSubmit(name, result)
     form.reset()
     toggleResultView()
