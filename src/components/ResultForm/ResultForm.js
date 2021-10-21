@@ -19,11 +19,10 @@ const ResultForm = ({ name, onResultSubmit }) => {
       player1Set3,
       player2Set3,
     } = form.elements
-    let result =
-      `${player1Set1.value}:${player2Set1.value} ${player1Set2.value}:${player2Set2.value}` +
-      player1Set3
-        ? `${player1Set3}:${player2Set3}`
-        : ''
+    let result = `${player1Set1.value}:${player2Set1.value} ${player1Set2.value}:${player2Set2.value}`
+    result = player1Set3
+      ? result + ` ${player1Set3.value}:${player2Set3.value}`
+      : ''
     onResultSubmit(name, result)
     form.reset()
     toggleResultView()
@@ -37,18 +36,32 @@ const ResultForm = ({ name, onResultSubmit }) => {
           <label>User vs {name}</label>
           <SetInput>
             <label>Set 1</label>
-            <input type="number" max="7" name="player1Set1" required /> :{' '}
-            <input type="number" max="7" name="player2Set1" required />
+            <input
+              type="number"
+              min="0"
+              max="7"
+              name="player1Set1"
+              required
+            />{' '}
+            :{' '}
+            <input type="number" min="0" max="7" name="player2Set1" required />
           </SetInput>
           <SetInput>
             <label>Set 2</label>
-            <input type="number" max="7" name="player1Set2" required /> :{' '}
-            <input type="number" max="7" name="player2Set2" required />
+            <input
+              type="number"
+              min="0"
+              max="7"
+              name="player1Set2"
+              required
+            />{' '}
+            :{' '}
+            <input type="number" min="0" max="7" name="player2Set2" required />
           </SetInput>
           <SetInput>
             <label>Set 3</label>
-            <input type="number" max="20" name="player1Set3" /> :{' '}
-            <input type="number" max="20" name="player2Set3" />
+            <input type="number" min="0" max="20" name="player1Set3" /> :{' '}
+            <input type="number" min="0" max="20" name="player2Set3" />
           </SetInput>
 
           <button type="submit">Submit your results</button>
@@ -76,6 +89,6 @@ const SetInput = styled.div`
   }
 
   input {
-    width: 1rem;
+    width: 3rem;
   }
 `
