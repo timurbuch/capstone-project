@@ -57,7 +57,11 @@ const ListItem = ({
             <li>Losses: {losses}</li>
           </ul>
           {isChallenged && (
-            <ResultForm name={name} onResultSubmit={onResultSubmit} />
+            <ResultForm
+              name={name}
+              onResultSubmit={onResultSubmit}
+              toggleChallenge={toggleChallenge}
+            />
           )}
           <ChallengeButton
             toggleChallenge={toggleChallenge}

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components/macro'
 import ResultButton from '../ResultButton/ResultButton'
 
-const ResultForm = ({ name, onResultSubmit }) => {
+const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
   const [resultView, setResultView] = useState(false)
 
   const toggleResultView = () => {
@@ -26,6 +26,7 @@ const ResultForm = ({ name, onResultSubmit }) => {
     onResultSubmit(name, result)
     form.reset()
     toggleResultView()
+    toggleChallenge()
   }
 
   return (
