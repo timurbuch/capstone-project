@@ -37,33 +37,51 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
         <StyledForm onSubmit={handleSubmit}>
           <label>User vs {name}</label>
           <SetInput>
-            <label>Set 1</label>
-            <input
-              type="number"
-              min="0"
-              max="7"
-              name="player1Set1"
-              required
-            />{' '}
-            :{' '}
-            <input type="number" min="0" max="7" name="player2Set1" required />
+            <label>
+              Set 1
+              <input
+                type="number"
+                min="0"
+                max="7"
+                name="player1Set1"
+                required
+              />{' '}
+              :{' '}
+              <input
+                type="number"
+                min="0"
+                max="7"
+                name="player2Set1"
+                required
+              />
+            </label>
           </SetInput>
           <SetInput>
-            <label>Set 2</label>
-            <input
-              type="number"
-              min="0"
-              max="7"
-              name="player1Set2"
-              required
-            />{' '}
-            :{' '}
-            <input type="number" min="0" max="7" name="player2Set2" required />
+            <label>
+              Set 2
+              <input
+                type="number"
+                min="0"
+                max="7"
+                name="player1Set2"
+                required
+              />{' '}
+              :{' '}
+              <input
+                type="number"
+                min="0"
+                max="7"
+                name="player2Set2"
+                required
+              />
+            </label>
           </SetInput>
           <SetInput>
-            <label>Set 3</label>
-            <input type="number" min="0" max="20" name="player1Set3" /> :{' '}
-            <input type="number" min="0" max="20" name="player2Set3" />
+            <label>
+              Set 3
+              <input type="number" min="0" max="20" name="player1Set3" /> :{' '}
+              <input type="number" min="0" max="20" name="player2Set3" />
+            </label>
           </SetInput>
 
           <button type="submit">Submit your results</button>
