@@ -7,7 +7,7 @@ import playerData from './players.json'
 import resultData from './results.json'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
-import useStateWithLocalStorage from './lib/useStatewithLocalStorage'
+import useStateWithLocalStorage from './lib/useStateWithLocalStorage'
 
 const mockResults = resultData.resultData
 const mockData = playerData.playerData
