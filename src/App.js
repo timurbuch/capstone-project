@@ -9,15 +9,15 @@ import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 import useStateWithLocalStorage from './hooks/useStateWithLocalStorage'
 
-const mockResults = resultData.resultData
-const mockData = playerData.playerData
+const initialResults = resultData.resultData
+const initialData = playerData.playerData
 function App() {
   const [players, setPlayers] = useStateWithLocalStorage(
-    mockData,
+    initialData,
     'storedPlayers'
   )
   const [results, setResults] = useStateWithLocalStorage(
-    mockResults,
+    initialResults,
     'storedResults'
   )
 
