@@ -14,7 +14,9 @@ const ResultButton = ({ toggleResultView }) => {
 export default ResultButton
 
 const StyledResultButton = styled.button`
-  border-radius: 1rem;
+  border-radius: 0.25rem;
+  width: 10rem;
+  font-family: 'Oswald Medium';
   padding: 3px;
   color: whitesmoke;
   background-color: black;

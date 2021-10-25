@@ -78,6 +78,7 @@ const StyledListItem = styled.li`
   background-color: #4758d6;
   margin: 0;
   padding: 1rem;
+  font-family: 'Oswald Medium';
   display: flex;
   color: white;
   flex-direction: column;

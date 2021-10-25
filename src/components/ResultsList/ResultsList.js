@@ -61,17 +61,23 @@ const AllResultsButton = styled.button`
   background-color: ${({ isFiltered }) =>
     !isFiltered ? 'lightgrey' : '#ffe900'};
   color: #38272d;
+  font-family: 'Oswald Medium';
+  border-radius: 0.25rem;
 `
+
 const FilteredResultsButton = styled.button`
   background-color: ${({ isFiltered }) =>
     !isFiltered ? '#ffe900' : 'lightgrey'};
   color: #38272d;
+  font-family: 'Oswald Medium';
+  border-radius: 0.25rem;
 `
 
 const Result = styled.li`
   background-color: #ffe900;
   margin: 0;
   padding: 0.5rem;
+  font-family: 'Oswald Medium';
   display: flex;
   color: #38272d;
   flex-direction: column;
