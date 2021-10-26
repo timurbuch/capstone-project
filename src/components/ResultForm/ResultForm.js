@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 import ResultButton from '../ResultButton/ResultButton'
+
 import InputBlock from '../InputBlock/InputBlock'
 import { MdClose } from 'react-icons/md'
 
@@ -44,9 +45,10 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
             <MdClose size={24} onClick={closeResultView} />
           </CloseButtonWrapper>
           <label>User vs {name}</label>
-          <InputBlock set={1} necessary={true} />
-          <InputBlock set={2} necessary={true} />
-          <InputBlock set={3} necessary={false} />
+
+          <InputBlock set={1} necessary={true} maxScore="7" />
+          <InputBlock set={2} necessary={true} maxScore="7" />
+          <InputBlock set={3} necessary={false} maxScore="25" />
 
           <button type="submit">Submit your results</button>
         </StyledForm>
@@ -64,7 +66,7 @@ const StyledForm = styled.form`
   border-radius: 0.25rem;
   padding: 0.25rem;
   gap: 1rem;
-  margin: 0 5vw;
+
   width: 65vw;
   align-items: center;
   button {

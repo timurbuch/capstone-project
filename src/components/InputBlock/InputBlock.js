@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 
-const InputBlock = ({ set, necessary }) => {
+const InputBlock = ({ set, necessary, maxScore }) => {
   return (
     <InputWrapper>
       <span>Set {set} </span>
@@ -9,7 +9,7 @@ const InputBlock = ({ set, necessary }) => {
         type="number"
         id={`user-result-set-${set}`}
         min="0"
-        max="7"
+        max={maxScore}
         name={`player1Set${set}`}
         required={necessary}
       />{' '}
@@ -18,7 +18,7 @@ const InputBlock = ({ set, necessary }) => {
         type="number"
         id={`oppenent-result-set-${set}`}
         min="0"
-        max="7"
+        max={maxScore}
         name={`player2Set${set}`}
         required={necessary}
       />
@@ -43,7 +43,7 @@ const InputWrapper = styled.div`
     width: 3rem;
   }
   input {
-    width: 2rem;
+    width: 2.5rem;
     margin: 0 0.125rem;
   }
 `
