@@ -56,7 +56,7 @@ const NavBar = styled.nav`
 `
 const NavigationLink = styled(NavLink)`
   color: grey;
-  &.${props => props.activeClassName} {
+  &.is-active {
     color: white;
     height: 7vh;
   }
