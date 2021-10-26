@@ -31,11 +31,11 @@ const Nav = () => {
   return (
     <NavBar>
       {navigationData.map(({ path, icon }) => (
-        <NavLink exact to={path} key={path}>
-          <IconContext.Provider value={{ color: 'white', size: '5vh' }}>
+        <NavigationLink exact to={path} key={path} activeClassName="is-active">
+          <IconContext.Provider value={{ size: '5vh' }}>
             {icon}
           </IconContext.Provider>
-        </NavLink>
+        </NavigationLink>
       ))}
     </NavBar>
   )
@@ -53,5 +53,12 @@ const NavBar = styled.nav`
   height: 10vh;
   position: sticky;
   bottom: 0;
+`
+const NavigationLink = styled(NavLink)`
+  color: grey;
+  &.${props => props.activeClassName} {
+    color: white;
+    height: 7vh;
+  }
 `
 export default Nav
