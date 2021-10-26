@@ -28,7 +28,7 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
     let result = `${player1Set1.value}:${player2Set1.value} ${player1Set2.value}:${player2Set2.value}`
     result =
       (player1Set3.value || player2Set3.value) > 0
-        ? result + `${player1Set3.value}:${player2Set3.value}`
+        ? result + ` ${player1Set3.value}:${player2Set3.value}`
         : result
     onResultSubmit(name, result)
     form.reset()
