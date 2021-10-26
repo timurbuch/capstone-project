@@ -77,13 +77,13 @@ const ListItem = ({
 const StyledListItem = styled.li`
   background-color: #4758d6;
   margin: 0;
-  padding: 1rem;
+  padding: 0.5rem;
   font-family: 'Oswald Medium';
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   display: flex;
   color: white;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.5rem;
   border-radius: 0.25rem;
   justify-content: center;
   align-items: center;
@@ -103,7 +103,7 @@ const StyledListItem = styled.li`
 
 const BackIconWrapper = styled.div`
   position: absolute;
-  top: 5vh;
+  top: 1.5rem;
   left: 5vw;
 `
 export default ListItem

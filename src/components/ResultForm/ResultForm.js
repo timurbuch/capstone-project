@@ -74,19 +74,6 @@ const StyledForm = styled.form`
   }
   position: relative;
 `
-
-const SetInput = styled.div`
-  display: flex;
-  padding: 0.125rem 0;
-  justify-content: space-evenly;
-  label {
-    width: 4rem;
-  }
-
-  input {
-    width: 3rem;
-  }
-`
 const CloseButtonWrapper = styled.div`
   position: absolute;
   top: 0.25rem;
