@@ -50,7 +50,7 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
           <InputBlock set={2} necessary={true} maxScore="7" />
           <InputBlock set={3} necessary={false} maxScore="25" />
 
-          <button type="submit">Submit your results</button>
+          <button>Submit your results</button>
         </StyledForm>
       )}
     </>
