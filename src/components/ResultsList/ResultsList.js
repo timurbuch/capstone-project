@@ -75,7 +75,7 @@ const FilteredResultsButton = styled.button`
 
 const Result = styled.li`
   background-color: #ffe900;
-  margin: 0;
+  margin: 0 0 0 2vh 0;
   padding: 0.5rem;
   font-family: 'Oswald Medium';
   border-radius: 0.25rem;
