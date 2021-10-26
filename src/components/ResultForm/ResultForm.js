@@ -8,12 +8,10 @@ import { MdClose } from 'react-icons/md'
 const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
   const [resultView, setResultView] = useState(false)
 
-  const openResultView = () => {
-    setResultView(true)
+  const toggleResultView = () => {
+    setResultView(!resultView)
   }
-  const closeResultView = () => {
-    setResultView(false)
-  }
+
   const handleSubmit = event => {
     event.preventDefault()
     const form = event.target
@@ -32,24 +30,26 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
         : result
     onResultSubmit(name, result)
     form.reset()
-    closeResultView()
+    toggleResultView()
     toggleChallenge()
   }
 
   return (
     <>
-      {!resultView && <ResultButton openResultView={openResultView} />}
+      {!resultView && <ResultButton openResultView={toggleResultView} />}
       {resultView && (
         <StyledForm onSubmit={handleSubmit}>
           <CloseButtonWrapper>
-            <MdClose size={24} onClick={closeResultView} />
+            <MdClose
+              size={24}
+              onClick={toggleResultView}
+              aria-label="CloseButton"
+            />
           </CloseButtonWrapper>
           <label>User vs {name}</label>
-
-          <InputBlock set={1} necessary={true} maxScore="7" />
-          <InputBlock set={2} necessary={true} maxScore="7" />
-          <InputBlock set={3} necessary={false} maxScore="25" />
-
+          <InputBlock setNumber={1} required={true} maxScore="7" />
+          <InputBlock setNumber={2} required={true} maxScore="7" />
+          <InputBlock setNumber={3} required={false} maxScore="25" />
           <button>Submit your results</button>
         </StyledForm>
       )}
@@ -66,15 +66,14 @@ const StyledForm = styled.form`
   border-radius: 0.25rem;
   padding: 0.25rem;
   gap: 1rem;
-
   width: 65vw;
   align-items: center;
+
   button {
     border-radius: 0.25rem;
     width: 10rem;
     font-family: 'Oswald Medium';
   }
-  position: relative;
 `
 const CloseButtonWrapper = styled.div`
   position: absolute;
