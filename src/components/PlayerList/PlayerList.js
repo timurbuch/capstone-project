@@ -31,7 +31,7 @@ export const StyledList = styled.ul`
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  background-color: black;
+  background-color: white;
   min-height: 100vh;
   overflow: auto;
 `

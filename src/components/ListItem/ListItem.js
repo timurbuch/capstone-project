@@ -79,16 +79,20 @@ const StyledListItem = styled.li`
   margin: 0;
   padding: 1rem;
   font-family: 'Oswald Medium';
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
   display: flex;
   color: white;
   flex-direction: column;
   gap: 1rem;
+  border-radius: 0.25rem;
   justify-content: center;
   align-items: center;
   width: 100%;
   position: relative;
   img {
     border-radius: 50%;
+    height: 100px;
+    width: auto;
   }
   ul {
     list-style-type: none;
