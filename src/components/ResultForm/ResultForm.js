@@ -1,12 +1,17 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 import ResultButton from '../ResultButton/ResultButton'
+import InputBlock from '../InputBlock/InputBlock'
+import { MdClose } from 'react-icons/md'
 
 const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
   const [resultView, setResultView] = useState(false)
 
-  const toggleResultView = () => {
-    setResultView(!resultView)
+  const openResultView = () => {
+    setResultView(true)
+  }
+  const closeResultView = () => {
+    setResultView(false)
   }
   const handleSubmit = event => {
     event.preventDefault()
@@ -26,63 +31,22 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
         : result
     onResultSubmit(name, result)
     form.reset()
-    toggleResultView()
+    closeResultView()
     toggleChallenge()
   }
 
   return (
     <>
-      <ResultButton toggleResultView={toggleResultView} />
+      {!resultView && <ResultButton openResultView={openResultView} />}
       {resultView && (
         <StyledForm onSubmit={handleSubmit}>
+          <CloseButtonWrapper>
+            <MdClose size={24} onClick={closeResultView} />
+          </CloseButtonWrapper>
           <label>User vs {name}</label>
-          <SetInput>
-            <label>
-              Set 1
-              <input
-                type="number"
-                min="0"
-                max="7"
-                name="player1Set1"
-                required
-              />{' '}
-              :{' '}
-              <input
-                type="number"
-                min="0"
-                max="7"
-                name="player2Set1"
-                required
-              />
-            </label>
-          </SetInput>
-          <SetInput>
-            <label>
-              Set 2
-              <input
-                type="number"
-                min="0"
-                max="7"
-                name="player1Set2"
-                required
-              />{' '}
-              :{' '}
-              <input
-                type="number"
-                min="0"
-                max="7"
-                name="player2Set2"
-                required
-              />
-            </label>
-          </SetInput>
-          <SetInput>
-            <label>
-              Set 3
-              <input type="number" min="0" max="20" name="player1Set3" /> :{' '}
-              <input type="number" min="0" max="20" name="player2Set3" />
-            </label>
-          </SetInput>
+          <InputBlock set={1} necessary={true} />
+          <InputBlock set={2} necessary={true} />
+          <InputBlock set={3} necessary={false} />
 
           <button type="submit">Submit your results</button>
         </StyledForm>
@@ -93,22 +57,38 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
 export default ResultForm
 
 const StyledForm = styled.form`
-  background-color: #4758d6;
+  background-color: black;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 0.25rem;
+  padding: 0.25rem;
   gap: 1rem;
-  margin: 0 15vw;
+  margin: 0 5vw;
+  width: 65vw;
+  align-items: center;
+  button {
+    border-radius: 0.25rem;
+    width: 10rem;
+    font-family: 'Oswald Medium';
+  }
+  position: relative;
 `
 
 const SetInput = styled.div`
   display: flex;
-  padding: 0.25rem 0;
+  padding: 0.125rem 0;
   justify-content: space-evenly;
   label {
-    width: 4em;
+    width: 4rem;
   }
 
   input {
     width: 3rem;
   }
+`
+const CloseButtonWrapper = styled.div`
+  position: absolute;
+  top: 0.25rem;
+  left: 0.75rem;
 `

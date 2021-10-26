@@ -1,8 +1,8 @@
 import styled from 'styled-components/macro'
 
-const ResultButton = ({ toggleResultView }) => {
+const ResultButton = ({ openResultView }) => {
   const handleResultView = () => {
-    toggleResultView()
+    openResultView()
   }
   return (
     <StyledResultButton onClick={handleResultView}>
