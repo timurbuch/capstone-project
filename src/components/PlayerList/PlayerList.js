@@ -25,13 +25,13 @@ const PlayerList = ({ players, setPlayers, onResultSubmit }) => {
 }
 
 export const StyledList = styled.ul`
-  margin: 0;
+  margin: 0 0 2vh 0;
   padding: 2rem 0 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   gap: 1rem;
-  background-color: black;
+  background-color: white;
   min-height: 100vh;
   overflow: auto;
 `

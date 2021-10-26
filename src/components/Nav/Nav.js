@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { IconContext } from 'react-icons'
 import {
   MdSportsTennis,
@@ -31,11 +31,11 @@ const Nav = () => {
   return (
     <NavBar>
       {navigationData.map(({ path, icon }) => (
-        <Link to={path} key={path}>
-          <IconContext.Provider value={{ color: 'white', size: '7vh' }}>
+        <NavigationLink exact to={path} key={path} activeClassName="is-active">
+          <IconContext.Provider value={{ size: '5vh' }}>
             {icon}
           </IconContext.Provider>
-        </Link>
+        </NavigationLink>
       ))}
     </NavBar>
   )
@@ -45,13 +45,20 @@ const NavBar = styled.nav`
   margin: 0;
   padding: 0;
   background-color: black;
-  border-top: 1px solid white;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  height: 12vh;
+  height: 10vh;
   position: sticky;
   bottom: 0;
+`
+const NavigationLink = styled(NavLink)`
+  color: grey;
+  &.is-active {
+    color: white;
+    height: 7vh;
+  }
 `
 export default Nav

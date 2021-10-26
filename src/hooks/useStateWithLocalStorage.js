@@ -3,7 +3,7 @@ import saveToLocal from '../lib/saveToLocal'
 
 const useStateWithLocalStorage = (defaultValue, key) => {
   const [value, setValue] = useState(() => {
-    if (localStorage.getItem('storedPlayers') === null) {
+    if (localStorage.getItem(key) === null) {
       return defaultValue
     } else {
       return JSON.parse(localStorage.getItem(key))

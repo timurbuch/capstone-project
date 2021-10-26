@@ -14,11 +14,12 @@ const Profile = () => {
 }
 
 const ProfileWrapper = styled.section`
-  height: 88vh;
-  margin: 0 1rem;
+  height: 90vh;
+  margin: 0 1.5rem;
   background-color: #4758d6;
-  border-left: 1px solid white;
-  border-right: 1px solid white;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+
+  border-radius: 0em.25rem;
   color: white;
   display: flex;
   flex-direction: column;
