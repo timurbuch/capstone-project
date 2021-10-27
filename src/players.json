@@ -7,6 +7,7 @@
       "img": "https://picsum.photos/200",
       "wins": 22,
       "losses": 3,
+      "rating": 210,
       "challenged": false
     },
     {
@@ -16,6 +17,7 @@
       "img": "https://picsum.photos/200",
       "wins": 27,
       "losses": 7,
+      "rating": 220,
       "challenged": false
     },
     {
@@ -25,6 +27,7 @@
       "img": "https://picsum.photos/200",
       "wins": 45,
       "losses": 3,
+      "rating": 215,
       "challenged": false
     },
     {
@@ -34,6 +37,7 @@
       "img": "https://picsum.photos/200",
       "wins": 34,
       "losses": 8,
+      "rating": 200,
       "challenged": false
     },
     {
@@ -43,6 +47,7 @@
       "img": "https://picsum.photos/200",
       "wins": 88,
       "losses": 13,
+      "rating": 220,
       "challenged": false
     },
     {
@@ -52,6 +57,67 @@
       "img": "https://picsum.photos/200",
       "wins": 17,
       "losses": 13,
+      "rating": 235,
+      "challenged": false
+    },
+    {
+      "id": 7,
+      "name": "Andre Agassi",
+      "age": 57,
+      "img": "https://picsum.photos/200",
+      "wins": 22,
+      "losses": 3,
+      "rating": 205,
+      "challenged": false
+    },
+    {
+      "id": 8,
+      "name": "Stan Smith",
+      "age": 62,
+      "img": "https://picsum.photos/200",
+      "wins": 27,
+      "losses": 7,
+      "rating": 218,
+      "challenged": false
+    },
+    {
+      "id": 9,
+      "name": "Fred Perry",
+      "age": 49,
+      "img": "https://picsum.photos/200",
+      "wins": 45,
+      "losses": 3,
+      "rating": 203,
+      "challenged": false
+    },
+    {
+      "id": 10,
+      "name": "You",
+      "age": "???",
+      "img": "https://picsum.photos/200",
+      "wins": 34,
+      "losses": 8,
+      "rating": 190,
+      "challenged": false
+    },
+    {
+      "id": 11,
+      "name": "Andre Ferrer",
+      "age": 37,
+      "img": "https://picsum.photos/200",
+      "wins": 88,
+      "losses": 13,
+      "rating": 212,
+      "challenged": false
+    },
+    {
+      "id": 12,
+      "name": "Andy Roddick",
+      "age": 27,
+      "img": "https://picsum.photos/200",
+      "wins": 17,
+      "losses": 13,
+      "rating": 195,
       "challenged": false
     }
   ]

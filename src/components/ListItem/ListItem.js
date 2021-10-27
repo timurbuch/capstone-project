@@ -10,6 +10,8 @@ const ListItem = ({
   age,
   wins,
   losses,
+  rating,
+  rank,
   challenged,
   players,
   setPlayers,
@@ -39,8 +41,9 @@ const ListItem = ({
 
   return (
     <StyledListItem onClick={setShowDetailsTrue}>
+      {!showDetails && <Rank>{rank}</Rank>}
       <h4>{name}</h4>
-
+      <Rating>{rating}</Rating>
       {showDetails && (
         <>
           <BackIconWrapper>
@@ -52,6 +55,7 @@ const ListItem = ({
 
           <img src={img} alt={name} />
           <ul>
+            <li>Rank: {rank}</li>
             <li>Age: {age}</li>
             <li>Wins: {wins}</li>
             <li>Losses: {losses}</li>
@@ -61,13 +65,16 @@ const ListItem = ({
               name={name}
               onResultSubmit={onResultSubmit}
               toggleChallenge={toggleChallenge}
+              players={players}
             />
           )}
-          <ChallengeButton
-            toggleChallenge={toggleChallenge}
-            name={name}
-            isChallenged={isChallenged}
-          />
+          {name !== 'You' && (
+            <ChallengeButton
+              toggleChallenge={toggleChallenge}
+              name={name}
+              isChallenged={isChallenged}
+            />
+          )}
         </>
       )}
     </StyledListItem>
@@ -100,7 +107,17 @@ const StyledListItem = styled.li`
     padding: 0;
   }
 `
-
+const Rating = styled.div`
+  position: absolute;
+  top: 1.75rem;
+  right: 5vw;
+`
+const Rank = styled.div`
+  position: absolute;
+  top: 1.75rem;
+  left: 5vw;
+  font-weight: 800;
+`
 const BackIconWrapper = styled.div`
   position: absolute;
   top: 1.5rem;

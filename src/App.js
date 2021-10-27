@@ -8,9 +8,11 @@ import resultData from './results.json'
 import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 import useStateWithLocalStorage from './hooks/useStateWithLocalStorage'
+import { nanoid } from 'nanoid'
 
 const initialResults = resultData.resultData
 const initialData = playerData.playerData
+
 function App() {
   const [players, setPlayers] = useStateWithLocalStorage(
     initialData,
@@ -24,7 +26,7 @@ function App() {
   const onResultSubmit = (opponent, submitResult) => {
     setResults([
       {
-        id: results.length,
+        id: nanoid(),
         player_1: 'User',
         player_2: opponent,
         result: submitResult,

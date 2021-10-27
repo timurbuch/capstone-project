@@ -45,7 +45,6 @@ const NavBar = styled.nav`
   margin: 0;
   padding: 0;
   background-color: black;
-
   display: flex;
   flex-direction: row;
   justify-content: space-around;
