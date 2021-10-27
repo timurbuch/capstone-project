@@ -55,9 +55,6 @@ const ResultForm = ({ name, players, onResultSubmit, toggleChallenge }) => {
       player2.rating = player2NewRating
     }
 
-    console.log(player1.rating)
-    console.log(player2.rating)
-
     onResultSubmit(name, result)
     form.reset()
     toggleResultView()
