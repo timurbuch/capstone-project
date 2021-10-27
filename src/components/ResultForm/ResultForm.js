@@ -35,7 +35,9 @@ const ResultForm = ({ name, players, onResultSubmit, toggleChallenge }) => {
     let player2Rating = player2.rating
     if (
       (player1Set1.value >= 6 && player1Set2.value >= 6) ||
-      player1Set3.value > player2Set3.value
+      player1Set3.value > player2Set3.value ||
+      (player1Set3.value > player2Set3.value && player1Set2.value >= 6) ||
+      (player1Set1.value >= 6 && player1Set3.value > player2Set3.value)
     ) {
       const { winner: player1NewRating, loser: player2NewRating } = eloRater(
         player1Rating,
