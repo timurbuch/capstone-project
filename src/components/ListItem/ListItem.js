@@ -63,6 +63,7 @@ const ListItem = ({
               toggleChallenge={toggleChallenge}
             />
           )}
+          {name !== 'You' && (
           <ChallengeButton
             toggleChallenge={toggleChallenge}
             name={name}
