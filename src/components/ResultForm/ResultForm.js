@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import styled from 'styled-components/macro'
 import ResultButton from '../ResultButton/ResultButton'
-
+import eloRater from '../../lib/eloRater'
 import InputBlock from '../InputBlock/InputBlock'
 import { MdClose } from 'react-icons/md'
 
-const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
+const ResultForm = ({ name, players, onResultSubmit, toggleChallenge }) => {
   const [resultView, setResultView] = useState(false)
 
   const toggleResultView = () => {
@@ -28,6 +28,36 @@ const ResultForm = ({ name, onResultSubmit, toggleChallenge }) => {
       (player1Set3.value || player2Set3.value) > 0
         ? result + ` ${player1Set3.value}:${player2Set3.value}`
         : result
+
+    const player1 = players.filter(player => player.name === 'You')[0]
+    const player2 = players.filter(player => player.name === name)[0]
+    let player1Rating = player1.rating
+    let player2Rating = player2.rating
+    if (
+      (player1Set1.value >= 6 && player1Set2.value >= 6) ||
+      player1Set3.value > player2Set3.value
+    ) {
+      const { winner: player1NewRating, loser: player2NewRating } = eloRater(
+        player1Rating,
+        player2Rating
+      )
+      player1.rating = player1NewRating
+      player2.rating = player2NewRating
+    } else if (
+      (player2Set1.value >= 6 && player2Set2.value >= 6) ||
+      player1Set3.value < player2Set3.value
+    ) {
+      const { winner: player2NewRating, loser: player1NewRating } = eloRater(
+        player2Rating,
+        player1Rating
+      )
+      player1.rating = player1NewRating
+      player2.rating = player2NewRating
+    }
+
+    console.log(player1.rating)
+    console.log(player2.rating)
+
     onResultSubmit(name, result)
     form.reset()
     toggleResultView()
@@ -68,7 +98,7 @@ const StyledForm = styled.form`
   gap: 1rem;
   width: 65vw;
   align-items: center;
-
+  position: relative;
   button {
     border-radius: 0.25rem;
     width: 10rem;
