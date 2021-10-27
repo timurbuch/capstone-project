@@ -9,6 +9,7 @@ import { Route, Switch } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 import useStateWithLocalStorage from './hooks/useStateWithLocalStorage'
 import { nanoid } from 'nanoid'
+import Header from './components/Header/Header'
 
 const initialResults = resultData.resultData
 const initialData = playerData.playerData
@@ -37,6 +38,7 @@ function App() {
 
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path="/">
           <PlayerList
