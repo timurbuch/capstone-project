@@ -1,18 +1,24 @@
 import styled from 'styled-components/macro'
 
-const LoginForm = () => {
+const LoginForm = ({ onUserSubmit }) => {
+  const handleUserSubmit = event => {
+    event.preventDefault()
+    const form = event.target
+    const username = form.elements
+    onUserSubmit(username)
+  }
   return (
     <LoginContainer>
       <h1>RNKR</h1>
       <form>
         <label htmlFor="username"></label>
         <input id="username" type="text" placeholder="Username"></input>
-        <label htmlFor="password"></label>
-        <input id="password" type="text" placeholder="Password"></input>
+        {/* <label htmlFor="password"></label>
+        <input id="password" type="text" placeholder="Password"></input> */}
         <LogInButton>Log In</LogInButton>
         <Separator />
-        <CreateAccountButton>Create Account</CreateAccountButton>
       </form>
+      <CreateAccountButton>Create Account</CreateAccountButton>
     </LoginContainer>
   )
 }
