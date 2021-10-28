@@ -5,11 +5,12 @@ import ResultsList from './components/ResultsList/ResultsList'
 import Profile from './components/Profile/Profile'
 import playerData from './players.json'
 import resultData from './results.json'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, Redirect } from 'react-router'
 import { BrowserRouter as Router } from 'react-router-dom'
 import useStateWithLocalStorage from './hooks/useStateWithLocalStorage'
 import { nanoid } from 'nanoid'
 import Header from './components/Header/Header'
+import LoginForm from './components/LoginForm/LoginForm'
 
 const initialResults = resultData.resultData
 const initialData = playerData.playerData
@@ -45,7 +46,7 @@ function App() {
     setResults([
       {
         id: nanoid(),
-        player_1: 'User',
+        player_1: username,
         player_2: opponent,
         result: submitResult,
       },
@@ -55,30 +56,51 @@ function App() {
 
   return (
     <Router>
-      <Header />
+      <Route exact path={['/playerlist', '/challenge', '/results', '/profile']}>
+        <Header />
+      </Route>
       <Switch>
         <Route exact path="/">
-          <PlayerList
-            players={players}
-            setPlayers={setPlayers}
-            onResultSubmit={onResultSubmit}
-          />
+          {username ? (
+            <Redirect to="/playerlist" />
+          ) : (
+            <LoginForm onUserSubmit={onUserSubmit} />
+          )}
+        </Route>
+        <Route exact path="/playerlist">
+          {!username ? (
+            <Redirect to="/" />
+          ) : (
+            <PlayerList
+              players={players}
+              setPlayers={setPlayers}
+              onResultSubmit={onResultSubmit}
+              username={username}
+            />
+          )}
         </Route>
         <Route path="/challenge">
-          <ChallengeList
-            players={players}
-            setPlayers={setPlayers}
-            onResultSubmit={onResultSubmit}
-          />
+          {!username ? (
+            <Redirect to="/" />
+          ) : (
+            <ChallengeList
+              players={players}
+              setPlayers={setPlayers}
+              onResultSubmit={onResultSubmit}
+              username={username}
+            />
+          )}
         </Route>
         <Route path="/results">
-          <ResultsList results={results} />
+          {!username ? <Redirect to="/" /> : <ResultsList results={results} />}
         </Route>
         <Route path="/profile">
-          <Profile />
+          {!username ? <Redirect to="/" /> : <Profile user={username} />}
         </Route>
       </Switch>
-      <Nav />
+      <Route exact path={['/playerlist', '/challenge', '/results', '/profile']}>
+        <Nav />
+      </Route>
     </Router>
   )
 }
