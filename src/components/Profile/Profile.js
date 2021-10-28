@@ -1,15 +1,20 @@
 import styled from 'styled-components/macro'
 import { useState } from 'react'
 import { MdEdit } from 'react-icons/md'
+import useStateWithLocalStorage from '../../hooks/useStateWithLocalStorage'
 import EditProfileForm from '../EditProfileForm/EditProfileForm'
+
 const Profile = ({ user }) => {
   const [showForm, setShowForm] = useState(false)
-  const [profileInformation, setProfileInformation] = useState({
-    name: user,
-    information: 'Let your opponents get to know you better!',
-    img:
-      'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
-  })
+  const [profileInformation, setProfileInformation] = useStateWithLocalStorage(
+    {
+      name: user,
+      information: 'Let your opponents get to know you better!',
+      img:
+        'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png',
+    },
+    'storedProfile'
+  )
   const handleEdit = (
     newName,
     newInformation,
