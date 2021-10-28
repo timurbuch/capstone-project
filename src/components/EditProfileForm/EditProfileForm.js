@@ -16,7 +16,11 @@ const EditProfileForm = ({ handleEdit, profileInformation, setShowForm }) => {
         <label htmlFor="name" aria-label="name-input">
           Name:
         </label>
-        <input type="text" id="name" value={profileInformation.name}></input>
+        <input
+          type="text"
+          id="name"
+          defaultValue={profileInformation.name}
+        ></input>
         <label htmlFor="info" aria-label="info-iput">
           About you:
         </label>
@@ -24,7 +28,7 @@ const EditProfileForm = ({ handleEdit, profileInformation, setShowForm }) => {
           type="text"
           id="info"
           rows="5"
-          value={profileInformation.information}
+          defaultValue={profileInformation.information}
         ></textarea>
         <button>Save your changes</button>
       </ProfileForm>
