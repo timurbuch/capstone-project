@@ -2,7 +2,7 @@ import { useState } from 'react'
 import styled from 'styled-components/macro'
 import { StyledList } from '../PlayerList/PlayerList'
 
-const ResultsList = ({ results }) => {
+const ResultsList = ({ results, username }) => {
   const [isFiltered, setIsFiltered] = useState(false)
   const setIsFilteredTrue = () => {
     setIsFiltered(true)
@@ -26,7 +26,8 @@ const ResultsList = ({ results }) => {
       {isFiltered
         ? results
             .filter(
-              result => result.player_1 === 'User' || result.player_2 === 'User'
+              result =>
+                result.player_1 === username || result.player_2 === username
             )
             .map(result => {
               return (

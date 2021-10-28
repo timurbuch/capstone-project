@@ -92,12 +92,12 @@
     },
     {
       "id": 10,
-      "name": "You",
-      "age": "???",
+      "name": "Stefanos Tsitsipas",
+      "age": 27,
       "img": "https://picsum.photos/200",
       "wins": 34,
       "losses": 8,
-      "rating": 190,
+      "rating": 197,
       "challenged": false
     },
     {

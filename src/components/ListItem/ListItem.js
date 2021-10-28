@@ -14,8 +14,9 @@ const ListItem = ({
   rank,
   challenged,
   players,
-  setPlayers,
+  onPlayersChange,
   onResultSubmit,
+  username,
 }) => {
   const [showDetails, setShowDetails] = useState(false)
   const [isChallenged, setIsChallenged] = useState(challenged)
@@ -32,7 +33,7 @@ const ListItem = ({
     const challengedPlayer = updatedPlayers.find(player => player.name === name)
     const status = challengedPlayer.challenged
     challengedPlayer.challenged = !status
-    setPlayers(updatedPlayers)
+    onPlayersChange(updatedPlayers)
   }
   const toggleChallenge = () => {
     setIsChallenged(!isChallenged)
@@ -66,9 +67,10 @@ const ListItem = ({
               onResultSubmit={onResultSubmit}
               toggleChallenge={toggleChallenge}
               players={players}
+              username={username}
             />
           )}
-          {name !== 'You' && (
+          {name !== username && (
             <ChallengeButton
               toggleChallenge={toggleChallenge}
               name={name}
