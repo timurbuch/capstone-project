@@ -67,8 +67,9 @@ const Separator = styled.div`
   opacity: 0.75;
 `
 const CreateAccountButton = styled.button`
-  margin: 0.125rem 0;
+  margin: 0.25rem 0;
   border-radius: 0.25rem;
+  width: 136px;
   font-family: 'Oswald Medium';
   background-color: black;
   border: 1px solid #4758d6;
