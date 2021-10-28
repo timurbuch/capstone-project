@@ -3,8 +3,7 @@ import { useLocation } from 'react-router'
 import { useEffect, useState } from 'react'
 const Header = () => {
   const [section, setSection] = useState('')
-  const locationObject = useLocation()
-  const location = locationObject.pathname
+  const { pathname: location } = useLocation()
 
   useEffect(() => {
     location === '/playerlist'
