@@ -5,7 +5,13 @@ import eloRater from '../../lib/eloRater'
 import InputBlock from '../InputBlock/InputBlock'
 import { MdClose } from 'react-icons/md'
 
-const ResultForm = ({ name, players, onResultSubmit, toggleChallenge }) => {
+const ResultForm = ({
+  name,
+  players,
+  onResultSubmit,
+  toggleChallenge,
+  username,
+}) => {
   const [resultView, setResultView] = useState(false)
 
   const toggleResultView = () => {
@@ -28,8 +34,7 @@ const ResultForm = ({ name, players, onResultSubmit, toggleChallenge }) => {
       (player1Set3.value || player2Set3.value) > 0
         ? result + ` ${player1Set3.value}:${player2Set3.value}`
         : result
-
-    const player1 = players.filter(player => player.name === 'You')[0]
+    const player1 = players.filter(player => player.name === username)[0]
     const player2 = players.filter(player => player.name === name)[0]
     let player1Rating = player1.rating
     let player2Rating = player2.rating
