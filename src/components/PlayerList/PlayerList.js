@@ -1,7 +1,7 @@
 import ListItem from '../ListItem/ListItem.js'
 import styled from 'styled-components/macro'
 
-const PlayerList = ({ players, setPlayers, onResultSubmit, username }) => {
+const PlayerList = ({ players, onPlayersChange, onResultSubmit, username }) => {
   const sortedPlayers = players.sort((a, b) => b.rating - a.rating)
   return (
     <StyledList>
@@ -18,7 +18,7 @@ const PlayerList = ({ players, setPlayers, onResultSubmit, username }) => {
             losses={player.losses}
             challenged={player.challenged}
             players={players}
-            setPlayers={setPlayers}
+            onPlayersChange={onPlayersChange}
             onResultSubmit={onResultSubmit}
             username={username}
           />

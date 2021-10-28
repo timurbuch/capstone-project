@@ -14,7 +14,7 @@ const ListItem = ({
   rank,
   challenged,
   players,
-  setPlayers,
+  onPlayersChange,
   onResultSubmit,
   username,
 }) => {
@@ -33,7 +33,7 @@ const ListItem = ({
     const challengedPlayer = updatedPlayers.find(player => player.name === name)
     const status = challengedPlayer.challenged
     challengedPlayer.challenged = !status
-    setPlayers(updatedPlayers)
+    onPlayersChange(updatedPlayers)
   }
   const toggleChallenge = () => {
     setIsChallenged(!isChallenged)

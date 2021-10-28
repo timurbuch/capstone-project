@@ -26,6 +26,10 @@ function App() {
   )
   const [username, setUsername] = useStateWithLocalStorage('', 'storedUser')
 
+  const onPlayersChange = changedPlayers => {
+    setPlayers(changedPlayers)
+  }
+
   const onUserSubmit = userName => {
     setUsername(userName)
     setPlayers([
@@ -73,7 +77,7 @@ function App() {
           ) : (
             <PlayerList
               players={players}
-              setPlayers={setPlayers}
+              onPlayersChange={onPlayersChange}
               onResultSubmit={onResultSubmit}
               username={username}
             />
@@ -85,14 +89,18 @@ function App() {
           ) : (
             <ChallengeList
               players={players}
-              setPlayers={setPlayers}
+              onPlayersChange={onPlayersChange}
               onResultSubmit={onResultSubmit}
               username={username}
             />
           )}
         </Route>
         <Route path="/results">
-          {!username ? <Redirect to="/" /> : <ResultsList results={results} />}
+          {!username ? (
+            <Redirect to="/" />
+          ) : (
+            <ResultsList results={results} username={username} />
+          )}
         </Route>
         <Route path="/profile">
           {!username ? <Redirect to="/" /> : <Profile user={username} />}
