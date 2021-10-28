@@ -20,7 +20,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Logo>RNKR</Logo>
-      <Subsection>{section ? section : ''}</Subsection>
+      <Subsection>{section}</Subsection>
     </HeaderWrapper>
   )
 }
@@ -41,7 +41,7 @@ const HeaderWrapper = styled.header`
 const Logo = styled.h2`
   font-family: 'Nfl Tampa Bay Buccaneers';
   font-size: 3rem;
-  letter-spacing: 0.125rem;
+  letter-spacing: 0.0625rem;
   margin: 0;
   padding: 0.5rem 1rem;
   width: fit-content;
