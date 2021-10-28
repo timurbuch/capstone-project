@@ -23,7 +23,24 @@ function App() {
     initialResults,
     'storedResults'
   )
+  const [username, setUsername] = useStateWithLocalStorage('', 'storedUser')
 
+  const onUserSubmit = userName => {
+    setUsername(userName)
+    setPlayers([
+      ...players,
+      {
+        id: nanoid(),
+        name: userName,
+        age: '???',
+        img: 'https://picsum.photos/200',
+        wins: 0,
+        losses: 0,
+        rating: 200,
+        challenged: false,
+      },
+    ])
+  }
   const onResultSubmit = (opponent, submitResult) => {
     setResults([
       {
