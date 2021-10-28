@@ -4,13 +4,17 @@ const LoginForm = ({ onUserSubmit }) => {
   const handleUserSubmit = event => {
     event.preventDefault()
     const form = event.target
-    const username = form.elements
-    onUserSubmit(username)
+    const { username } = form.elements
+    onUserSubmit(username.value)
   }
   return (
     <LoginContainer>
       <h1>RNKR</h1>
-      <form>
+      <form
+        onSubmit={event => {
+          handleUserSubmit(event)
+        }}
+      >
         <label htmlFor="username"></label>
         <input id="username" type="text" placeholder="Username"></input>
         {/* <label htmlFor="password"></label>
