@@ -11,7 +11,7 @@ import {
 const Nav = () => {
   const navigationData = [
     {
-      path: '/',
+      path: '/playerlist',
       icon: <MdLeaderboard aria-label="PlayerList" />,
     },
     {
