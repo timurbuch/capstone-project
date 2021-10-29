@@ -10,7 +10,7 @@ describe('ResultButton', () => {
     expect(resultButton).toBeInTheDocument()
   })
   it('calls a function when clicked', () => {
-    render(<ResultButton toggleResultView={mockToggleResultView} />)
+    render(<ResultButton openResultView={mockToggleResultView} />)
     const resultButton = screen.getByRole('button')
     userEvent.click(resultButton)
     expect(mockToggleResultView).toHaveBeenCalled

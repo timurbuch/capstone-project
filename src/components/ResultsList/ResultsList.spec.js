@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import ResultsList from './ResultsList'
-
+const testusername = 'User'
 const testData = [
   {
     id: 1,
@@ -33,20 +33,20 @@ const testData = [
 
 describe('ResultsList', () => {
   it('renders', () => {
-    render(<ResultsList results={testData} />)
+    render(<ResultsList results={testData} username={testusername} />)
     const resultsList = screen.getByRole('list')
     expect(resultsList).toBeInTheDocument()
   })
   it('renders as many listItems as testData contains', () => {
-    render(<ResultsList results={testData} />)
+    render(<ResultsList results={testData} username={testusername} />)
     const resultsListItems = screen.getAllByRole('listitem')
     expect(resultsListItems).toHaveLength(6)
   })
   it('renders a filtered list only containing the users results when a button is clicked', () => {
-    render(<ResultsList results={testData} />)
+    render(<ResultsList results={testData} username={testusername} />)
     const filteredResultsButton = screen.getByText(/my/)
     userEvent.click(filteredResultsButton)
-    const resultsListItems = screen.getAllByRole('listitem')
-    expect(resultsListItems).toHaveLength(2)
+    const filteredResultsListItems = screen.getAllByRole('listitem')
+    expect(filteredResultsListItems).toHaveLength(2)
   })
 })
