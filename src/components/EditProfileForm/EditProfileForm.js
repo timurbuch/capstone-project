@@ -51,8 +51,9 @@ const ProfileFormWrapper = styled.div`
 const ProfileForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  padding: 5vh 10vw;
+  gap: 0.75rem;
+  width: 60vw;
+  padding: 5vh 5vw;
   label {
     font-size: 1.5rem;
   }
