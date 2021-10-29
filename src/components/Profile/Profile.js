@@ -34,10 +34,12 @@ const Profile = ({ user }) => {
           <EditButton size={28} onClick={() => setShowForm(true)} />
           <AvatarWrapper>
             <img src={profileInformation.img} alt="user profile pic" />
-            <h3>{user}</h3>
+            <h2>{user}</h2>
           </AvatarWrapper>
-          <h4>About me:</h4>
-          <p>{profileInformation.information}</p>
+          <InfoWrapper>
+            <h4>About me:</h4>
+            <p>{profileInformation.information}</p>
+          </InfoWrapper>
         </ProfileWrapper>
       ) : (
         <EditProfileForm
@@ -51,14 +53,16 @@ const Profile = ({ user }) => {
 }
 
 const ProfileWrapper = styled.section`
-  height: 80vh;
+  min-height: 80vh;
   margin: 0 1.5rem;
   padding-top: 2rem;
   background-color: #4758d6;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
-  h2,
-  h3,
-  h4 {
+  h2 {
+    font-size: 2.5rem;
+    margin: 0;
+  }
+  p {
     margin: 0;
   }
   border-radius: 0.25rem;
@@ -77,12 +81,31 @@ const AvatarWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  margin-bottom: 2rem;
   img {
     border-radius: 50%;
     height: 150px;
     width: auto;
   }
 `
+const InfoWrapper = styled.div`
+  border: 1px black solid;
+  background-color: black;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+  border-radius: 0.25rem;
+  width: 65vw;
+  padding: 0 0.5rem 0.5rem 0.5rem;
+  justify-content: center;
+  h4 {
+    margin: 0;
+    text-align: center;
+  }
+  p {
+    margin: 0;
+    padding: 0 0.125rem;
+  }
+`
+
 const EditButton = styled(MdEdit)`
   color: white;
   position: absolute;
