@@ -1,11 +1,23 @@
+import { useState } from 'react'
 import styled from 'styled-components/macro'
 
 const EditProfileForm = ({ handleEdit, profileInformation, setShowForm }) => {
+  const [profilePicture, setProfilePicture] = useState('')
+
+  function getProfilePreview(previewEvent) {
+    const image = previewEvent.target.files[0]
+    const reader = new FileReader()
+    reader.onload = event => {
+      setProfilePicture(event.target.result)
+    }
+    reader.readAsDataURL(image)
+  }
+
   const handleSubmit = event => {
     event.preventDefault()
     const form = event.target
     const { name, info } = form.elements
-    handleEdit(name.value, info.value)
+    handleEdit(name.value, info.value, profilePicture)
     form.reset()
     setShowForm(false)
   }
@@ -15,6 +27,15 @@ const EditProfileForm = ({ handleEdit, profileInformation, setShowForm }) => {
       <ProfileForm onSubmit={handleSubmit}>
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" defaultValue={profileInformation.name} />
+        <label htmlFor="avatar">Profile picture</label>
+        <input
+          type="file"
+          id="avatar"
+          accept=".png, .jpeg, .jpg"
+          onChange={event => {
+            getProfilePreview(event)
+          }}
+        />
         <label htmlFor="info">About you:</label>
         <textarea
           type="text"
@@ -44,11 +65,11 @@ const ProfileFormWrapper = styled.div`
 const ProfileForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
   width: 60vw;
   padding: 5vh 5vw;
   label {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
   input,
   textarea {
