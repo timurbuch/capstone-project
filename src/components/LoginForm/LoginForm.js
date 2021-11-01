@@ -16,9 +16,7 @@ const LoginForm = ({ onUserSubmit }) => {
         }}
       >
         <label htmlFor="username"></label>
-        <input id="username" type="text" placeholder="Username"></input>
-        {/* <label htmlFor="password"></label>
-        <input id="password" type="text" placeholder="Password"></input> */}
+        <input id="username" type="text" placeholder="Username" />
         <LogInButton>Log In</LogInButton>
         <Separator />
       </form>

@@ -13,23 +13,16 @@ const EditProfileForm = ({ handleEdit, profileInformation, setShowForm }) => {
   return (
     <ProfileFormWrapper>
       <ProfileForm onSubmit={handleSubmit}>
-        <label htmlFor="name" aria-label="name-input">
-          Name:
-        </label>
-        <input
-          type="text"
-          id="name"
-          defaultValue={profileInformation.name}
-        ></input>
-        <label htmlFor="info" aria-label="info-iput">
-          About you:
-        </label>
+        <label htmlFor="name">Name:</label>
+        <input type="text" id="name" defaultValue={profileInformation.name} />
+        <label htmlFor="info">About you:</label>
         <textarea
           type="text"
           id="info"
           rows="5"
+          maxLength="200"
           defaultValue={profileInformation.information}
-        ></textarea>
+        />
         <button>Save your changes</button>
       </ProfileForm>
       <CancelButton onClick={() => setShowForm(false)}>Cancel</CancelButton>
