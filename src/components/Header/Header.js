@@ -9,7 +9,7 @@ const Header = () => {
     location === '/playerlist'
       ? setSection('Rankings')
       : location === '/challenge'
-      ? setSection('Your Challenges')
+      ? setSection('Open Challenges')
       : location === '/results'
       ? setSection('Results')
       : location === '/profile'

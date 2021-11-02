@@ -1,12 +1,18 @@
-import { useState } from 'react'
 import styled from 'styled-components/macro'
 import { StyledList } from '../PlayerList/PlayerList'
+import { useState, useEffect } from 'react'
 
 const ResultsList = ({ results, username }) => {
   const [isFiltered, setIsFiltered] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const setIsFilteredTrue = () => {
     setIsFiltered(true)
   }
+
   const setIsFilteredFalse = () => {
     setIsFiltered(false)
   }

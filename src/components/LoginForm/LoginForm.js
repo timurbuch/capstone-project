@@ -14,6 +14,7 @@ const LoginForm = ({ onUserSubmit }) => {
         onSubmit={event => {
           handleUserSubmit(event)
         }}
+        autocomplete="off"
       >
         <label htmlFor="username"></label>
         <input id="username" type="text" placeholder="Username" />

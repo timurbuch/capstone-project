@@ -6,6 +6,7 @@ import EditProfileForm from '../EditProfileForm/EditProfileForm'
 
 const Profile = ({ user }) => {
   const [showForm, setShowForm] = useState(false)
+
   const [profileInformation, setProfileInformation] = useStateWithLocalStorage(
     {
       name: user,
@@ -15,6 +16,7 @@ const Profile = ({ user }) => {
     },
     'storedProfile'
   )
+
   const handleEdit = (
     newName,
     newInformation,
@@ -54,12 +56,12 @@ const Profile = ({ user }) => {
 
 const ProfileWrapper = styled.section`
   min-height: 80vh;
-  margin: 0 1.5rem;
-  padding-top: 2rem;
+  margin: 0 1rem;
+  padding-top: 3rem;
   background-color: #4758d6;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
   h2 {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     margin: 0;
   }
   p {

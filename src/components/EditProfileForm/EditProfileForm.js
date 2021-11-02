@@ -28,14 +28,17 @@ const EditProfileForm = ({ handleEdit, profileInformation, setShowForm }) => {
         <label htmlFor="name">Name:</label>
         <input type="text" id="name" defaultValue={profileInformation.name} />
         <label htmlFor="avatar">Profile picture</label>
-        <input
-          type="file"
-          id="avatar"
-          accept=".png, .jpeg, .jpg"
-          onChange={event => {
-            getProfilePreview(event)
-          }}
-        />
+        <CustomFileInput>
+          <input
+            type="file"
+            id="avatar"
+            accept=".png, .jpeg, .jpg"
+            onChange={event => {
+              getProfilePreview(event)
+            }}
+          />
+          Upload File
+        </CustomFileInput>
         <label htmlFor="info">About you:</label>
         <textarea
           type="text"
@@ -62,6 +65,7 @@ const ProfileFormWrapper = styled.div`
   align-items: center;
   padding: 1.5rem 0;
 `
+
 const ProfileForm = styled.form`
   display: flex;
   flex-direction: column;
@@ -77,6 +81,9 @@ const ProfileForm = styled.form`
     font-size: 1rem;
     font-family: 'Oswald Medium';
   }
+  input[type='file'] {
+    display: none;
+  }
   button {
     margin: 0 auto;
     border-radius: 0.25rem;
@@ -84,6 +91,17 @@ const ProfileForm = styled.form`
     width: 10rem;
   }
 `
+
+const CustomFileInput = styled.label`
+  border: 1px solid #ccc;
+  display: inline-block;
+  background-color: #efefef;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 0.25rem;
+  font-size: 18px;
+`
+
 const CancelButton = styled.button`
   background-color: #e71d1d;
   margin-bottom: 5vh;
