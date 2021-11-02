@@ -10,7 +10,7 @@ You can save your information in your profile, and see your stats. You can brows
 
 ### `Demo`
 
-You can find the hosted version on Heroku: [RNKR Demo](https://capstone-project-chi-eight.vercel.app/)
+You can find the hosted version on Vercel: [RNKR Demo](https://capstone-project-chi-eight.vercel.app/)
 
 **_IMPORTANT NOTE: currently optimized for mobile!_**
 
