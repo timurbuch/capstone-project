@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+# 🏅 RNKR – Capstone project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> RNKR was created for tennis players and clubs to provide and organize an internal ranking list.
 
-## Available Scripts
+## `Description`
 
-In the project directory, you can run:
+**This is a capstone project for [neuefische](https://www.neuefische.de/) web development bootcamp.**
 
-### `npm start`
+You can save your information in your profile, and see your stats. You can browse the ranking list to see information about other players in your club. You can challenge them to a match. after the match you can submit your result. Depending on your result, your and your opponents rating and possibly position in the ranking list will change. You will always have a overview over where you stand and who is on top :1st_place_medal:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### `Demo`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+You can find the hosted version on Vercel: [RNKR Demo](https://capstone-project-chi-eight.vercel.app/)
 
-### `npm test`
+**_IMPORTANT NOTE: currently optimized for mobile!_**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## `Tech Stack`
 
-### `npm run build`
+- React
+- React Router
+- React Custom Hooks
+- Styled-Components
+- React Testing Library / Jest
+- localStorage
+- Storybook
+- react-icons
+- elo-rank
+- nanoid
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## `Project Setup`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Clone this repository
+- Inside root folder install all dependencies via `$ npm install`
+- Run app in development mode via `$ npm run dev`
+- Client: http://localhost:3000/
+- Run tests via `$ npm run test`
+- Run Storybook via `$ npm run storybook`

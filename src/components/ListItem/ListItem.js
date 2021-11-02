@@ -7,7 +7,6 @@ import ResultForm from '../ResultForm/ResultForm'
 const ListItem = ({
   name,
   img,
-  age,
   wins,
   losses,
   rating,
@@ -57,7 +56,6 @@ const ListItem = ({
           <img src={img} alt={name} />
           <ul>
             <li>Rank: {rank}</li>
-            <li>Age: {age}</li>
             <li>Wins: {wins}</li>
             <li>Losses: {losses}</li>
           </ul>

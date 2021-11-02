@@ -1,8 +1,14 @@
 import ListItem from '../ListItem/ListItem.js'
 import styled from 'styled-components/macro'
+import { useEffect } from 'react'
 
 const PlayerList = ({ players, onPlayersChange, onResultSubmit, username }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const sortedPlayers = players.sort((a, b) => b.rating - a.rating)
+
   return (
     <StyledList>
       {sortedPlayers.map(player => {
@@ -12,7 +18,6 @@ const PlayerList = ({ players, onPlayersChange, onResultSubmit, username }) => {
             name={player.name}
             rank={sortedPlayers.indexOf(player) + 1}
             img={player.img}
-            age={player.age}
             wins={player.wins}
             rating={player.rating}
             losses={player.losses}

@@ -2,39 +2,39 @@
   "resultData": [
     {
       "id": 1,
-      "player_1": "Boris Becker",
-      "player_2": "Andre Agassi",
-      "result": "7:5 6:4"
+      "player_1": "Uwe Teichmann",
+      "player_2": "Torben Hölzl",
+      "result": "6:1 6:3"
     },
     {
       "id": 2,
-      "player_1": "John McEnroe",
-      "player_2": "Bjorn Borg",
+      "player_1": "Kevin Grothe",
+      "player_2": "Gianluigi Tufano",
       "result": "7:5 6:4"
     },
     {
       "id": 3,
-      "player_1": "Rafa Nadal",
-      "player_2": "Stefanos Tsitsipas",
-      "result": "7:5 6:4"
+      "player_1": "Markus Behrensl",
+      "player_2": "Thorben Liebert",
+      "result": "5:7 6:4 10:8"
     },
     {
       "id": 4,
-      "player_1": "Daniil Medvedev",
-      "player_2": "Andre Agassi",
-      "result": "7:5 6:4"
+      "player_1": "Lian Jin",
+      "player_2": "Richard Wirt",
+      "result": "6:3 6:4"
     },
     {
       "id": 5,
-      "player_1": "Stan Smith",
-      "player_2": "Andre Agassi",
-      "result": "7:5 6:4"
+      "player_1": "Koloda Romanov",
+      "player_2": "Phillipp Koschyk",
+      "result": "4:6 6:1 10:2"
     },
     {
       "id": 6,
-      "player_1": "Roger Federer",
-      "player_2": "Bjorn Borg",
-      "result": "7:5 6:4"
+      "player_1": "Can Erdemir",
+      "player_2": "Marko Weishaupt",
+      "result": "2:6 1:6"
     }
   ]
 }

@@ -3,14 +3,14 @@ import Nav from './components/Nav/Nav'
 import ChallengeList from './components/ChallengeList/ChallengeList'
 import ResultsList from './components/ResultsList/ResultsList'
 import Profile from './components/Profile/Profile'
-import playerData from './players.json'
-import resultData from './results.json'
-import { Route, Switch, Redirect } from 'react-router'
-import { BrowserRouter as Router } from 'react-router-dom'
-import useStateWithLocalStorage from './hooks/useStateWithLocalStorage'
-import { nanoid } from 'nanoid'
 import Header from './components/Header/Header'
 import LoginForm from './components/LoginForm/LoginForm'
+import { Route, Switch, Redirect } from 'react-router'
+import { BrowserRouter as Router } from 'react-router-dom'
+import { nanoid } from 'nanoid'
+import useStateWithLocalStorage from './hooks/useStateWithLocalStorage'
+import playerData from './players.json'
+import resultData from './results.json'
 
 const initialResults = resultData.resultData
 const initialData = playerData.playerData
@@ -46,6 +46,7 @@ function App() {
       },
     ])
   }
+
   const onResultSubmit = (opponent, submitResult) => {
     setResults([
       {

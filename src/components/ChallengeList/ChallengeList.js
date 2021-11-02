@@ -1,5 +1,6 @@
 import { StyledList } from '../PlayerList/PlayerList'
 import ListItem from '../ListItem/ListItem'
+import { useEffect } from 'react'
 
 const ChallengeList = ({
   players,
@@ -7,6 +8,10 @@ const ChallengeList = ({
   onResultSubmit,
   username,
 }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   return (
     <StyledList>
       {players
@@ -17,7 +22,6 @@ const ChallengeList = ({
               key={player.id}
               name={player.name}
               img={player.img}
-              age={player.age}
               wins={player.wins}
               losses={player.losses}
               challenged={player.challenged}
